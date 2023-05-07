@@ -2,6 +2,10 @@
 
 Reaper of screencast videos for OSINT purposes
 
+## Installation
+
+`pip install -r requirements.txt`
+
 ## Usage
 
 **Warning! The tool is in the active phase of development**
