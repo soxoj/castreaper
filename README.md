@@ -6,6 +6,9 @@ Reaper of screencast videos for OSINT purposes
 
 `pip install -r requirements.txt`
 
+For Ubuntu:
+`apt-get update && apt-get install ffmpeg libsm6 libxext6  -y`
+
 ## Usage
 
 **Warning! The tool is in the active phase of development**
