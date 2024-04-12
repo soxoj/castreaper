@@ -22,3 +22,8 @@ For Ubuntu:
 - text boxes detection
 - fast-forwards and fast-backwards
 - several preprocessing modes for different boxes
+
+## SOWEL classification
+
+This tool uses the following SOWEL technique:
+- [SOTL-3.5. Study Shared Screen Content](https://sowel.soxoj.com/shared-screen)
