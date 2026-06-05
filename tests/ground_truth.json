@@ -1,0 +1,53 @@
+{
+  "_comment": "Reference ground truth for test.mp4 — entities visually confirmed in the screencast (Google Account / Password Manager of 'Pet Lysenko'). Used by test_benchmark.py to measure how much castreaper actually surfaces. Add items as new ones are confirmed; keep only entities a human verified in the frames.",
+  "video": "test.mp4",
+  "tiers": {
+    "emails": {
+      "weight": 3,
+      "description": "High-value OSINT emails. Both appear ~second 57-100 of the clip.",
+      "items": [
+        "petrlysenko99@yandex.ru",
+        "plysenko5@gmail.com"
+      ]
+    },
+    "domains": {
+      "weight": 1,
+      "description": "Domains/URLs visibly present (address bar, password manager list, speed-dial).",
+      "items": [
+        "passwords.google.com",
+        "myaccount.google.com",
+        "accounts.google.com",
+        "mail.google.com",
+        "drive.google.com",
+        "trends.google.ru",
+        "google.com",
+        "facebook.com",
+        "twitter.com",
+        "yandex.ru",
+        "gmail.com",
+        "dzen.ru",
+        "canva.com",
+        "bubblespider.com",
+        "flyingresearch.net"
+      ]
+    },
+    "urls": {
+      "weight": 1,
+      "description": "Full path-bearing URLs. An item may be {value, match}: 'value' is the real URL as seen in the frame, 'match' is an OCR-stable substring used for scoring (the random token in a password-reveal link is not reliably recognised, so we match on the stable prefix).",
+      "items": [
+        {
+          "value": "passwords.google.com/password/AZy434ti0vncmroflqjS3mbZ3pm1g9fWMsU_TQusHvU%3D",
+          "match": "google.com/password"
+        }
+      ]
+    },
+    "stretch": {
+      "weight": 0,
+      "description": "Not scored against the baseline (weight 0). Future-capability targets: phone numbers, person names, passwords. Track these once the tool learns to extract them.",
+      "items": [
+        "+77054294487",
+        "Pet Lysenko"
+      ]
+    }
+  }
+}

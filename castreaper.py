@@ -145,11 +145,11 @@ def get_video_params(c):
 
     c.set(cv2.CAP_PROP_POS_AVI_RATIO, 1)
     ms = c.get(cv2.CAP_PROP_POS_MSEC)
-    frames = c.get(cv2.CAP_PROP_POS_FRAMES) or v.get(cv.CAP_PROP_FRAME_COUNT)
+    frames = c.get(cv2.CAP_PROP_POS_FRAMES) or c.get(cv2.CAP_PROP_FRAME_COUNT)
     c.set(cv2.CAP_PROP_POS_AVI_RATIO, 0)
 
+    s = frames / fps
     if ms < 1:
-        s = frames / fps
         ms = s * 1000
 
     return {
@@ -183,7 +183,7 @@ async def _recognize_frame(queue, text_queue, storage):
         print('Exit from recognizing frames')
         return False
 
-    img = np.asarray(im_pil)
+    img = np.array(im_pil)
     # img = cv2.cvtColor(cv2.bitwise_not(img), cv2.COLOR_BGR2GRAY)
 
     # gray = cv2.convertScaleAbs(img, 1.5, 1)
